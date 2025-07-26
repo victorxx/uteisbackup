@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- SEO básico -->
+  <title>Calculadora de Consumo de Energia para Empresas</title>
+  <meta name="description" content="Simule o consumo e o custo de energia elétrica da sua empresa com nossa calculadora online. Descubra como economizar na conta de luz de forma eficiente.">
+  <meta name="keywords" content="calculadora de energia, consumo de energia, empresas, economia de energia, conta de luz, eficiência energética, simulador de energia">
+  <meta name="author" content="Nome da sua empresa ou equipe">
+  
+  <!-- Para redes sociais: Open Graph (Facebook, LinkedIn) -->
+  <meta property="og:title" content="Calculadora de Energia para Empresas">
+  <meta property="og:description" content="Calcule o consumo e economize energia elétrica na sua empresa com nossa ferramenta gratuita e fácil de usar.">
+  <meta property="og:type" content="website">
+ 
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Calculadora de Consumo de Energia para Empresas">
+  <meta name="twitter:description" content="Use nossa ferramenta gratuita para simular o consumo de energia elétrica na sua empresa e descobrir como reduzir os custos.">
+
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #2ecc71;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #27ae60;
+    }
+    #resultado {
+      margin-top: 20px;
+      padding: 15px;
+      background: #ecf0f1;
+      border: 1px solid #bdc3c7;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Calculadora de Consumo de Energia</h1>
+
+  <label for="potencia">Potência do equipamento (em kW):</label>
+  <input type="number" id="potencia" step="0.01" placeholder="Ex: 1.5">
+
+  <label for="horas">Horas de uso por dia:</label>
+  <input type="number" id="horas" placeholder="Ex: 8">
+
+  <label for="dias">Dias de uso por mês:</label>
+  <input type="number" id="dias" placeholder="Ex: 22">
+
+  <label for="tarifa">Tarifa de energia (R$/kWh):</label>
+  <input type="number" id="tarifa" step="0.01" placeholder="Ex: 1.20">
+
+  <button onclick="calcular()">Calcular</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function calcular() {
+      const potencia = parseFloat(document.getElementById("potencia").value);
+      const horas = parseFloat(document.getElementById("horas").value);
+      const dias = parseFloat(document.getElementById("dias").value);
+      const tarifa = parseFloat(document.getElementById("tarifa").value);
+
+      if (isNaN(potencia) || isNaN(horas) || isNaN(dias) || isNaN(tarifa)) {
+        document.getElementById("resultado").innerHTML = "<strong>Por favor, preencha todos os campos corretamente.</strong>";
+        return;
+      }
+
+      const consumo = potencia * horas * dias;
+      const custo = consumo * tarifa;
+
+      document.getElementById("resultado").innerHTML = `
+        <p><strong>Consumo mensal:</strong> ${consumo.toFixed(2)} kWh</p>
+        <p><strong>Custo mensal estimado:</strong> R$ ${custo.toFixed(2)}</p>
+        <iframe src="https://uteis01.pages.dev/servicobancario" width="350" height="250" frameborder="0" allowfullscreen></iframe>
+        <a href="https://uteis01.pages.dev/servicobancario" 
+          style="display: inline-block; background-color: blue; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; font-family: sans-serif;">
+          ABRIR TELA CHEIA
+        </a> 
+        <br>
+        <br>
+              <iframe src="https://sistema01.pages.dev/" width="350" height="250" frameborder="0" allowfullscreen></iframe>
+          <a href="https://sistema01.pages.dev/" 
+          style="display: inline-block; background-color: blue; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; font-family: sans-serif;">
+          ABRIR TELA CHEIA
+        </a> 
+        <br>
+        <br>
+             <iframe src="https://uteis01.pages.dev/net" width="350" height="250" frameborder="0" allowfullscreen></iframe>
+        <a href="https://uteis01.pages.dev/net" 
+          style="display: inline-block; background-color: blue; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; font-family: sans-serif;">
+          ABRIR TELA CHEIA
+        </a>
+        <br>
+        <br>
+        <iframe src="https://conteudo01.pages.dev/" width="350" height="250" frameborder="0" allowfullscreen></iframe>
+          <a href="https://conteudo01.pages.dev/" 
+          style="display: inline-block; background-color: blue; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; font-family: sans-serif;">
+          ABRIR TELA CHEIA
+        </a> 
+      `;
+    }
+  </script>
+
+</body>
+</html>
